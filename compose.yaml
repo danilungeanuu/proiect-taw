@@ -11,6 +11,6 @@ services:
       - "5173:5173"
     volumes:
       - .:/app
-      - /app/.git/
+     # - /app/.git/
     working_dir: /app
     user: 1000:1000 
