@@ -1,14 +1,37 @@
-<script setup></script>
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+</script>
 
 <template>
-  <h1 class="text-[10px]">You did it!</h1>
-  <h1 class="text-[20px]">You did it!yeeee</h1>
-  <i class="bi bi-brightness-high"></i>
+  <header class="nav">
+    <RouterLink to="/" class="nav__link">Home</RouterLink>
+    <RouterLink to="/trails" class="nav__link">Trails</RouterLink>
+    <RouterLink to="/favorites" class="nav__link">Favorites</RouterLink>
+    <RouterLink to="/profile" class="nav__link">Profile</RouterLink>
+  </header>
+
+  <main class="page">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
-
-@import "tailwindcss";
-@import "bootstrap-icons";
-
+.nav {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+.nav__link {
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.is-active {
+  font-weight: 700;
+  border: 1px solid #999;
+}
+.page {
+  padding: 16px;
+}
 </style>
